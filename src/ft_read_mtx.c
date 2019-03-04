@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_read_mtx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 14:33:34 by ffahey            #+#    #+#             */
-/*   Updated: 2019/03/04 14:58:49 by ffahey           ###   ########.fr       */
+/*   Created: 2019/03/04 14:45:43 by ffahey            #+#    #+#             */
+/*   Updated: 2019/03/04 14:46:41 by ffahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int ac, char **av)
+int		**ft_read_mtx(char *filename)
 {
 	int		**mtx;
-	int		i;
 
-	if (ac != 2)
-		ft_error_output(USAGE);
-	mtx = ft_read_mtx(av[1]);
-	ft_graphics(mtx);
-	return (0);
+	mtx = NULL;
+	return (mtx);
 }

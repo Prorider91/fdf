@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_error_output.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 14:33:34 by ffahey            #+#    #+#             */
-/*   Updated: 2019/03/04 14:58:49 by ffahey           ###   ########.fr       */
+/*   Created: 2019/03/04 14:50:14 by ffahey            #+#    #+#             */
+/*   Updated: 2019/03/04 14:56:36 by ffahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int ac, char **av)
+void	ft_error_output(char *err_str)
 {
-	int		**mtx;
-	int		i;
+	int		len;
 
-	if (ac != 2)
-		ft_error_output(USAGE);
-	mtx = ft_read_mtx(av[1]);
-	ft_graphics(mtx);
-	return (0);
+	len = ft_strlen(err_str);
+	write(2, err_str, len);
+	exit(1);
 }

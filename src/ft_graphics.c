@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_graphics.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 14:33:34 by ffahey            #+#    #+#             */
-/*   Updated: 2019/03/04 14:58:49 by ffahey           ###   ########.fr       */
+/*   Created: 2019/03/04 14:39:35 by ffahey            #+#    #+#             */
+/*   Updated: 2019/03/04 14:58:17 by ffahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int ac, char **av)
+void	ft_graphics(int **mtx)
 {
-	int		**mtx;
-	int		i;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	t_line	line;
 
-	if (ac != 2)
-		ft_error_output(USAGE);
-	mtx = ft_read_mtx(av[1]);
-	ft_graphics(mtx);
-	return (0);
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window(mlx_ptr, 1000, 1000, "fdF");
+
+	line = ft_create_line(ft_create_point(400, 200, 0),
+						ft_create_point(100, 150, 0));
+	ft_put_line(mlx_ptr, win_ptr, line, 0x0000ff00);
+
+	mlx_loop(mlx_ptr);
 }

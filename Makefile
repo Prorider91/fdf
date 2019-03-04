@@ -6,7 +6,7 @@
 #    By: ffahey <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/03 14:19:44 by ffahey            #+#    #+#              #
-#    Updated: 2019/03/03 18:57:57 by ffahey           ###   ########.fr        #
+#    Updated: 2019/03/04 14:56:25 by ffahey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ MLX_INC_PATH=/usr/local/include
 FT_PATH=./libft
 BIN_PATH=./bin
 
-SRC=fdf.c create_functions.c
+SRC=fdf.c create_functions.c ft_put_line.c ft_read_mtx.c ft_graphics.c \
+	ft_error_output.c
 OBJ:= $(addprefix $(BIN_PATH)/,$(SRC:.c=.o))
 
 .PHONY: all clean fclean re
@@ -32,7 +33,7 @@ all: $(BIN_PATH) $(NAME)
 $(BIN_PATH):
 	mkdir -p bin
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INC_PATH)/fdf.h
 	@make -s -C $(FT_PATH)
 	gcc -o $@ $(OBJ) -L$(MLX_PATH) -lmlx -I$(MLX_INC_PATH) -L$(FT_PATH) -lft -I$(FT_PATH) $(FFLAGS)
 
