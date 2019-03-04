@@ -6,13 +6,13 @@
 #    By: ffahey <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/03 14:19:44 by ffahey            #+#    #+#              #
-#    Updated: 2019/03/03 14:49:34 by ffahey           ###   ########.fr        #
+#    Updated: 2019/03/03 18:57:57 by ffahey           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=fdf
 
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=#-Wall -Wextra -Werror
 FFLAGS=-framework OpenGL -framework AppKit
 
 SRC_PATH=./src
@@ -22,7 +22,7 @@ MLX_INC_PATH=/usr/local/include
 FT_PATH=./libft
 BIN_PATH=./bin
 
-SRC=fdf.c
+SRC=fdf.c create_functions.c
 OBJ:= $(addprefix $(BIN_PATH)/,$(SRC:.c=.o))
 
 .PHONY: all clean fclean re
